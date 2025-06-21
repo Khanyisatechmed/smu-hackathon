@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+httpx
+openai-whisper @ git+https://github.com/openai/whisper.git
+torch
+gtts
+whisper
+python-dotenv
