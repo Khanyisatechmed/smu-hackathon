@@ -15,6 +15,8 @@ router = APIRouter()
 @router.post("/transcribe")
 async def transcribe(file: UploadFile = File(...)):
     file_path = f"temp_{file.filename}"
+    if "../" in file_path or "..\\" in file_path:
+        raise Exception("Invalid file path")
     with open(file_path, "wb") as f:
         f.write(await file.read())
 
